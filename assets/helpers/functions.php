@@ -11,7 +11,8 @@
 
   session_start();
   $_SESSION["password"] = $password;
-
+  $_SESSION["length"] = $passwordLength;
+  
   function generatePassword($length, $allowedList) {
     $password = "";
     while (strlen($password) < $length) {
@@ -21,8 +22,13 @@
     }
     return $password;
   }
-
+  
   function getRandomIndex($array) {
     return rand(0, (count($array) - 1));
   }
+
+  if (!empty($passwordLength)) {
+    header("Location: result.php");
+  }
+
 ?>
