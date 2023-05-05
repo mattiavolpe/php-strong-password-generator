@@ -16,30 +16,9 @@
   Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali.
   */
 
-  $passwordLength = $_GET["passwordLength"];
-  $charactersList = [];
-  $symbols = ["\\", "'", "|", "!", '"', "£", "$", "%", "&", "/", "(", ")", "=", "?", "^", "`", "~", "[", "+", "*", "]", "@", "°", "#", ",", ";", ".", ":", "-", "_", "<", ">", "{", "}"];
-  array_push($charactersList, range(0, 9));
-  array_push($charactersList, range("a", "z"));
-  array_push($charactersList, range("A", "Z"));
-  array_push($charactersList, $symbols);
-
-  $password = generatePassword($passwordLength, $charactersList);
-  echo $password;
-
-  function generatePassword($length, $allowedList) {
-    $password = "";
-    while (strlen($password) < $length) {
-      $randomSubArrayIndex = getRandomIndex($allowedList);
-      $randomCharacterIndex = getRandomIndex($allowedList[$randomSubArrayIndex]);
-      $password .= $allowedList[$randomSubArrayIndex][$randomCharacterIndex];
-    }
-    return $password;
-  }
-
-  function getRandomIndex($array) {
-    return rand(0, (count($array) - 1));
-  }
+  include __DIR__ . "/helpers/functions.php";
+  var_dump(strlen("°"));
+  var_dump(strlen("K19/"));
 ?>
 
 <!DOCTYPE html>
