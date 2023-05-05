@@ -8,7 +8,9 @@
   array_push($charactersList, $symbols);
 
   $password = generatePassword($passwordLength, $charactersList);
-  echo $password;
+
+  session_start();
+  $_SESSION["password"] = $password;
 
   function generatePassword($length, $allowedList) {
     $password = "";
