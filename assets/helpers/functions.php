@@ -1,14 +1,24 @@
 <?php
   session_start();
 
-  if(!empty($_GET["passwordLength"])) {
-    $passwordLength = $_GET["passwordLength"];
+  $_SESSION["error"] = false;
+  $_SESSION["lengthError"] = false;
+  $_SESSION["allowedError"] = false;
+
+  if((!empty($_GET)) && empty($_GET["passwordLength"])) {
+    $_SESSION["error"] = true;
+    $_SESSION["lengthError"] = true;
   } else {
-    // TODO fill error page
+    $passwordLength = $_GET["passwordLength"];
   }
 
-  if(empty($_GET["numbers"]) && empty($_GET["lowercase"]) && empty($_GET["uppercase"]) && empty($_GET["symbols"])) {
-    // TODO fill error page
+  if((!empty($_GET)) && empty($_GET["numbers"]) && empty($_GET["lowercase"]) && empty($_GET["uppercase"]) && empty($_GET["symbols"])) {
+    $_SESSION["error"] = true;
+    $_SESSION["allowedError"] = true;
+  }
+
+  if ($_SESSION["error"]) {
+    header("Location: error.php");
   }
 
   $charactersList = [];

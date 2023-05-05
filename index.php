@@ -36,7 +36,7 @@
             <div class="flex-grow-1">
               <label for="passwordLength" class="form-label">Password length</label>
               <input type="number"
-                class="form-control" name="passwordLength" id="passwordLength" placeholder="Insert the desired length...">
+                class="form-control" name="passwordLength" id="passwordLength" placeholder="Insert the desired length..." min="1" max="100">
             </div>
             <button type="submit" class="btn btn-primary">Generate password</button>
           </div>
