@@ -22,16 +22,20 @@
 
       <div class="container text-center">
         <div class="bg-light rounded-3 p-4">
+
           <div class="alert alert-danger" role="alert">
-            
             <strong>ERROR: </strong>
             <span>
               <?= $error ?>
             </span>
           </div>
+          <!-- /.alert -->
+
           <a name="tryAgain" id="tryAgain" class="btn btn-primary" href="index.php" role="button">Try again</a>
+          
         </div>
       </div>
+      <!-- /.container -->
 
     </main>
     <!-- /#app_main -->

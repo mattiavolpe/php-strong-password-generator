@@ -31,6 +31,7 @@
     <main id="app_main">
 
       <div class="container">
+
         <form action="" method="get" class="mx-auto bg-light rounded-3 p-4">
           <div id="lengthInput" class="d-flex justify-content-between align-items-end gap-5 mb-4">
             <div class="flex-grow-1">
@@ -41,6 +42,7 @@
             <button type="submit" class="btn btn-primary">Generate password</button>
           </div>
           <!-- /#lengthInput -->
+
           <div id="checkboxGroup" class="mb-3">
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" name="numbers" id="numbers" value="numbers" checked>
@@ -60,6 +62,7 @@
             </div>
           </div>
           <!-- /#checkboxGroup -->
+
           <div id="repetitionSelection">
             <h6 class="d-inline me-3 mb-0">Allow two or more adjacent identical characters: </h6>
             <div class="form-check form-check-inline mb-0">
@@ -74,7 +77,9 @@
           <!-- /#repetitionSelection -->
 
         </form>
+
       </div>
+      <!-- /.repetitionSelection -->
 
     </main>
     <!-- /#app_main -->
