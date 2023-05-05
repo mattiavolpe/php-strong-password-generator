@@ -43,7 +43,9 @@
     while (strlen($password) < $length) {
       $randomSubArrayIndex = getRandomIndex($allowedList);
       $randomCharacterIndex = getRandomIndex($allowedList[$randomSubArrayIndex]);
-      $password .= $allowedList[$randomSubArrayIndex][$randomCharacterIndex];
+      if ($_GET["adjacent"] === "yes" || strlen($password) === 0 || $allowedList[$randomSubArrayIndex][$randomCharacterIndex] != $password[strlen($password) - 1]) {
+        $password .= $allowedList[$randomSubArrayIndex][$randomCharacterIndex];
+      }
     }
     return $password;
   }
