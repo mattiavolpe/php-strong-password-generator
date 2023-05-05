@@ -1,15 +1,40 @@
 <?php
-  $passwordLength = $_GET["passwordLength"];
+  session_start();
+
+  if(!empty($_GET["passwordLength"])) {
+    $passwordLength = $_GET["passwordLength"];
+  } else {
+    // TODO fill error page
+  }
+
+  if(empty($_GET["numbers"]) && empty($_GET["lowercase"]) && empty($_GET["uppercase"]) && empty($_GET["symbols"])) {
+    // TODO fill error page
+  }
+
   $charactersList = [];
+  $numbers = range(0, 9);
+  $lowercase = range("a", "z");
+  $uppercase = range("A", "Z");
   $symbols = ["\\", "'", "|", "!", '"', "$", "%", "&", "/", "(", ")", "=", "?", "^", "`", "~", "[", "+", "*", "]", "@", "#", ",", ";", ".", ":", "-", "_", "{", "}"];
-  array_push($charactersList, range(0, 9));
-  array_push($charactersList, range("a", "z"));
-  array_push($charactersList, range("A", "Z"));
-  array_push($charactersList, $symbols);
+  
+  if($_GET["numbers"] === "numbers") {
+    array_push($charactersList, $numbers);
+  }
+
+  if($_GET["lowercase"] === "lowercase") {
+    array_push($charactersList, $lowercase);
+  }
+
+  if($_GET["uppercase"] === "uppercase") {
+    array_push($charactersList, $uppercase);
+  }
+
+  if($_GET["symbols"] === "symbols") {
+    array_push($charactersList, $symbols);
+  }
 
   $password = generatePassword($passwordLength, $charactersList);
 
-  session_start();
   $_SESSION["password"] = $password;
   $_SESSION["length"] = $passwordLength;
   
