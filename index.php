@@ -32,7 +32,7 @@
 
       <div class="container">
         <form action="" method="get" class="mx-auto bg-light rounded-3 p-4">
-          <div class="d-flex justify-content-between align-items-end gap-5">
+          <div class="d-flex justify-content-between align-items-end gap-5 mb-4">
             <div class="flex-grow-1">
               <label for="passwordLength" class="form-label">Password length</label>
               <input type="number"
@@ -40,7 +40,29 @@
             </div>
             <button type="submit" class="btn btn-primary">Generate password</button>
           </div>
-          
+          <div class="mb-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="numbers" id="numbers" value="numbers">
+              <label class="form-check-label" for="numbers">Numbers</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="lowercase" id="lowercase" value="lowercase">
+              <label class="form-check-label" for="lowercase">Lowercase characters</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="uppercase" id="uppercase" value="uppercase">
+              <label class="form-check-label" for="uppercase">Uppercase characters</label>
+            </div>
+          </div>
+          <h6 class="d-inline me-3 mb-0">Symbols: </h6>
+          <div class="form-check form-check-inline mb-0">
+            <input class="form-check-input" type="radio" name="symbols" id="symbolsYes" value="yes" checked>
+            <label class="form-check-label" for="symbolsYes">Yes</label>
+          </div>
+          <div class="form-check form-check-inline mb-0">
+            <input class="form-check-input" type="radio" name="symbols" id="symbolsNo" value="no">
+            <label class="form-check-label" for="symbolsNo">No</label>
+          </div>
 
         </form>
       </div>
