@@ -29,7 +29,7 @@
   $numbers = range(0, 9);
   $lowercase = range("a", "z");
   $uppercase = range("A", "Z");
-  $symbols = ["\\", "'", "|", "!", '"', "$", "%", "&", "/", "(", ")", "=", "?", "^", "`", "~", "[", "+", "*", "]", "@", "#", ",", ";", ".", ":", "-", "_", "{", "}"];
+  $symbols = ["\\", "|", "!", '"', "£", "$", "%", "&", "/", "(", ")", "=", "'", "?", "ì", "^", "`", "~", "è", "é", "[", "+", "*", "]", "ù", "§", "ò", "ç", "@", "à", "°", "#", ",", ";", ".", ":", "-", "_", "{", "}", "<", ">"];
   
   // ADDS NUMBERS IF THE RELATIVE CHECKBOX IS SELECTED
   if($_GET["numbers"] === "numbers") {
@@ -61,7 +61,7 @@
 
   function generatePassword($length, $allowedList) {
     $password = "";
-    while (strlen($password) < $length) {
+    for ($i = 0; $i < $length; $i++) {
       // CHOOSES A RANDOM SUB-ARRAY (NUMBERS, LOWERCASE, UPPERCASE OR SYMBOLS)
       $randomSubArrayIndex = getRandomIndex($allowedList);
 
@@ -71,6 +71,8 @@
       // COMPOSES THE PASSWORD CHECKING IF "NO IDENTICAL ADJACENT CHARACTERS" IS CHECKED
       if ($_GET["adjacent"] === "yes" || strlen($password) === 0 || $allowedList[$randomSubArrayIndex][$randomCharacterIndex] != $password[strlen($password) - 1]) {
         $password .= $allowedList[$randomSubArrayIndex][$randomCharacterIndex];
+      } else {
+        $i--;
       }
     }
     return $password;
