@@ -18,7 +18,7 @@
 
           <h2 class="fw-bold">Congratulations</h2>  
           <h4>Here's your new <?= $_SESSION["length"] ?> characters long super-secure password</h4>
-          <h5 class="text-success">
+          <h5 class="text-success mb-0 pt-4">
             <?= $_SESSION["password"] ?>
           </h5>
           
