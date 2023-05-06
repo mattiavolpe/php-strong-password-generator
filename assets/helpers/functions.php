@@ -57,6 +57,10 @@
   // EXPORTS THE PASSWORD AND ITS LENGTH TO SHOW THEM IN RESULT.PHP
   $_SESSION["password"] = $password;
   $_SESSION["length"] = $passwordLength;
+
+  if (!empty($passwordLength)) {
+    header("Location: result.php");
+  }
   
 
   function generatePassword($length, $allowedList) {
@@ -80,10 +84,6 @@
   
   function getRandomIndex($array) {
     return rand(0, (count($array) - 1));
-  }
-
-  if (!empty($passwordLength)) {
-    header("Location: result.php");
   }
 
 ?>
