@@ -32,7 +32,7 @@
 
       <div class="container">
 
-        <form action="" method="get" class="mx-auto bg-light rounded-3 p-4">
+        <form method="get" class="mx-auto bg-light rounded-3 p-4">
           <div id="lengthInput" class="d-flex justify-content-between align-items-end gap-5 mb-4">
             <div class="flex-grow-1">
               <label for="passwordLength" class="form-label">Password length</label>
