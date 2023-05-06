@@ -85,5 +85,3 @@
   function getRandomIndex($array) {
     return rand(0, (count($array) - 1));
   }
-
-?>
